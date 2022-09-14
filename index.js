@@ -83,30 +83,8 @@ app.post(
       date: date_format,
     };
 
-    // User.updateOne({ _id: id }, newvalue)
-    //   .then((data) => console.log("Successfully updated!"))
-    //   .catch((err) => next(err));
-    // User.findById(id, function (err, data) {
-    //   if (err) console.log(err);
-    //   data.log.push(newvalue);
-    //   data.count = data.log.length;
-    //   data.save();
-    //   console.log(data);
-    // });
-    // User.find(
-    //   { _id: id },
-    //   "_id username date description duration ",
-    //   function (err, data) {
-    //     if (err) console.err(err);
-    //     console.log(data);
-    //     res.json(data[0]);
-    //   }
-    // );
     User.findOne({ _id: id })
       .then((data) => {
-        // data.description = description;
-        // data.duration = duration;
-        // data.date = date_format;
         data.log.push(newvalue);
         data.count = data.log.length;
         data.save();
