@@ -69,10 +69,10 @@ app.post(
       date = new Date(date_input);
     }
     if (date == "Invalid Date") {
-      res.send("Invalid Date!");
+      throw new Error("Invalid Date!");
     }
     if (description == "" || duration == "") {
-      res.send("Description and duration are required!");
+      throw new Error("Description and duration are required!");
     }
 
     date_format = date.toDateString();
